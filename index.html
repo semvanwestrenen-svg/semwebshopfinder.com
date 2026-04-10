@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>semwebshopfinder</title>
+<title>Sem Webshop Finder</title>
 
 <style>
 body {
@@ -13,9 +13,11 @@ body {
     color: #222;
 }
 
+/* HEADER */
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     padding: 20px 40px;
     border-bottom: 1px solid #eee;
 }
@@ -24,16 +26,15 @@ header {
     color: #d4af37;
     font-weight: bold;
     font-size: 22px;
-} .logo {
-  display: block;
-  margin: 0 auto;
 }
 
+/* HOME HERO */
 .hero {
     text-align: center;
     padding: 60px 20px;
 }
 
+/* CARDS */
 .container {
     display: flex;
     gap: 20px;
@@ -50,6 +51,7 @@ header {
     cursor: pointer;
     transition: 0.3s;
 }
+
 .card:hover {
     transform: translateY(-5px);
 }
@@ -64,6 +66,7 @@ header {
     padding: 15px;
 }
 
+/* BUTTON */
 .btn {
     display: inline-block;
     margin-top: 10px;
@@ -75,6 +78,7 @@ header {
     font-weight: bold;
 }
 
+/* PAGES */
 .page {
     display: none;
     padding: 40px;
@@ -84,6 +88,7 @@ header {
     display: block;
 }
 
+/* BACK BUTTON */
 .back {
     color: #d4af37;
     font-weight: bold;
@@ -104,45 +109,45 @@ function showPage(id) {
 <body>
 
 <header>
-<div class="logo"Sem Webshop finder<div>
+    <div class="logo">Sem Webshop Finder</div>
 </header>
 
 <!-- HOME -->
 <div id="home" class="page active">
 
 <div class="hero">
-<h1>Mijn Webshops</h1>
-<p>Klik op een kaart voor meer info</p>
+    <h1>Mijn Webshops</h1>
+    <p>Klik op een kaart voor meer info</p>
 </div>
 
 <div class="container">
 
-<!-- MOOIHORLOGE -->
-<div class="card" onclick="showPage('mooihorloge')">
-<img src="https://image.thum.io/get/width/800/https://mooihorloge.nl">
-<div class="card-content">
-<h2>Mooihorloge</h2>
-<p>Luxe horloges webshop</p>
-</div>
-</div>
+    <!-- MOOIHORLOGE -->
+    <div class="card" onclick="showPage('mooihorloge')">
+        <img src="https://image.thum.io/get/width/800/https://mooihorloge.nl">
+        <div class="card-content">
+            <h2>Mooihorloge</h2>
+            <p>Luxe horloges webshop</p>
+        </div>
+    </div>
 
-<!-- SUCCESMETADS -->
-<div class="card" onclick="showPage('succesmetads')">
-<img src="https://image.thum.io/get/width/800/https://succesmetads.nl">
-<div class="card-content">
-<h2>Succesmetads</h2>
-<p>Online geld verdienen</p>
-</div>
-</div>
+    <!-- SUCCESMETADS -->
+    <div class="card" onclick="showPage('succesmetads')">
+        <img src="https://image.thum.io/get/width/800/https://succesmetads.nl">
+        <div class="card-content">
+            <h2>Succesmetads</h2>
+            <p>Online geld verdienen</p>
+        </div>
+    </div>
 
-<!-- MARKTPLAATS -->
-<div class="card" onclick="showPage('marktplaats')">
-<img src="https://image.thum.io/get/width/800/https://www.marktplaats.nl">
-<div class="card-content">
-<h2>Marktplaats Profiel</h2>
-<p>Mijn account bekijken</p>
-</div>
-</div>
+    <!-- MARKTPLAATS -->
+    <div class="card" onclick="showPage('marktplaats')">
+        <img src="https://image.thum.io/get/width/800/https://www.marktplaats.nl">
+        <div class="card-content">
+            <h2>Marktplaats Profiel</h2>
+            <p>Mijn account bekijken</p>
+        </div>
+    </div>
 
 </div>
 </div>
@@ -164,9 +169,7 @@ function showPage(id) {
 <li>Casual designs</li>
 </ul>
 
-<a class="btn" href="https://mooihorloge.nl" target="_blank">
-Ga naar website
-</a>
+<a class="btn" href="https://mooihorloge.nl" target="_blank">Ga naar website</a>
 
 </div>
 
@@ -187,9 +190,7 @@ Ga naar website
 <li>Online business</li>
 </ul>
 
-<a class="btn" href="https://succesmetads.nl" target="_blank">
-Ga naar website
-</a>
+<a class="btn" href="https://succesmetads.nl" target="_blank">Ga naar website</a>
 
 </div>
 
@@ -202,7 +203,7 @@ Ga naar website
 
 <img src="https://image.thum.io/get/width/1000/https://www.marktplaats.nl" width="100%">
 
-<p>Dit is mijn profiel op :contentReference[oaicite:0]{index=0}</p>
+<p>Mijn Marktplaats profiel</p>
 
 <h2>Over dit account</h2>
 <ul>
