@@ -9,29 +9,36 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #fff;
-    color: #222;
+    background: #f5f5f5;
 }
 
 /* HEADER */
 header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 40px;
-    border-bottom: 1px solid #eee;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid #d4af37;
+    font-weight: bold;
+    font-size: 22px;
+    color: #d4af37;
 }
 
-.logo {
-    color: #d4af37;
-    font-weight: bold;
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* TITELS */
+.section-title {
+    text-align: center;
+    margin: 40px 0 10px;
     font-size: 22px;
 }
 
-/* HOME HERO */
-.hero {
-    text-align: center;
-    padding: 60px 20px;
+.divider {
+    width: 80%;
+    margin: 10px auto 30px;
+    border-bottom: 2px solid #d4af37;
 }
 
 /* CARDS */
@@ -40,25 +47,25 @@ header {
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 30px;
+    padding: 0 20px 40px;
 }
 
 .card {
-    width: 300px;
+    width: 280px;
     border-radius: 15px;
     overflow: hidden;
+    background: white;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     cursor: pointer;
     transition: 0.3s;
 }
-
 .card:hover {
     transform: translateY(-5px);
 }
 
 .card img {
     width: 100%;
-    height: 180px;
+    height: 170px;
     object-fit: cover;
 }
 
@@ -66,40 +73,38 @@ header {
     padding: 15px;
 }
 
+.card-content h2 {
+    margin: 0;
+}
+
 /* BUTTON */
 .btn {
     display: inline-block;
-    margin-top: 10px;
-    padding: 10px 12px;
+    margin-top: 15px;
+    padding: 10px 15px;
     background: #d4af37;
     color: black;
-    border-radius: 5px;
     text-decoration: none;
+    border-radius: 6px;
     font-weight: bold;
 }
 
 /* PAGES */
-.page {
-    display: none;
-    padding: 40px;
-}
+.page { display:none; padding:40px; }
+.active { display:block; }
 
-.active {
-    display: block;
-}
-
-/* BACK BUTTON */
+/* BACK */
 .back {
     color: #d4af37;
-    font-weight: bold;
     cursor: pointer;
-    display: inline-block;
+    font-weight: bold;
     margin-bottom: 20px;
+    display: inline-block;
 }
 </style>
 
 <script>
-function showPage(id) {
+function showPage(id){
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.getElementById(id).classList.add('active');
 }
@@ -108,182 +113,99 @@ function showPage(id) {
 </head>
 <body>
 
-<header>
-    <div class="logo">Sem Webshop Finder</div>
-</header>
+<header>Sem Webshop Finder</header>
 
 <!-- HOME -->
 <div id="home" class="page active">
 
-  <div class="hero">
-    <h1 class="section-title" style="margin-top:30px;">Mijn Webshops</h1>
-    <p class="sub-title">Klik op een kaart voor meer info</p>
-  </div>
-
-  <div class="divider">
-    <hr> 
-    <span>Mijn Webshops</span>
-    <hr>
-  </div>
-
-  <div class="container">
-
-    <div class="card" onclick="showPage('mooihorloge')">
-      <img src="https://image.thum.io/get/width/800/https://mooihorloge.nl">
-      <div class="card-content">
-        <h2>Mooihorloge</h2>
-        <p>Luxe horloges webshop</p>
-      </div>
-    </div>
-
-    <div class="card" onclick="showPage('succesmetads')">
-      <img src="https://image.thum.io/get/width/800/https://succesmetads.nl">
-      <div class="card-content">
-        <h2>Succesmetads</h2>
-        <p>Online geld verdienen</p>
-      </div>
-    </div>
-
-    <div class="card" onclick="showPage('marktplaats')">
-      <img src="https://www.upstreamads.com/assets/logo/marktplaats.png"
-           style="height:70px; object-fit:contain; background:white; padding:10px;">
-      <div class="card-content">
-        <h2>Marktplaats</h2>
-        <p>Mijn account bekijken</p>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="divider" style="margin-top:50px;">
-    <hr>
-    <span>Overige Webshops</span>
-    <hr>
-  </div>
-
-  <div class="container">
-
-    <div class="card" onclick="showPage('ali')">
-      <img src="https://image.thum.io/get/width/800/https://aliexpress.com">
-      <div class="card-content">
-        <h2>Aliexpress</h2>
-        <p>Goedkope producten wereldwijd</p>
-      </div>
-    </div>
-
-    <div class="card" onclick="showPage('gol')">
-      <img src="https://image.thum.io/get/width/800/https://goohoo.com">
-      <div class="card-content">
-        <h2>Goohoo</h2>
-        <p>Goedkope webshop NL</p>
-      </div>
-    </div>
-
-  </div>
-
+<div class="hero">
+<h1>Mijn Webshops</h1>
+<p>Klik op een kaart voor meer info</p>
 </div>
 
+<!-- MIJN WEBSHOPS -->
+<div class="section-title">Mijn Webshops</div>
+<div class="divider"></div>
 
 <div class="container">
 
-    <!-- MOOIHORLOGE -->
-    <div class="card" onclick="showPage('mooihorloge')">
-        <img src="https://image.thum.io/get/width/800/https://mooihorloge.nl">
-        <div class="card-content">
-            <h2>Mooihorloge</h2>
-            <p>Luxe horloges webshop</p>
-        </div>
-    </div>
-
-    <!-- SUCCESMETADS -->
-    <div class="card" onclick="showPage('succesmetads')">
-        <img src="https://image.thum.io/get/width/800/https://succesmetads.nl">
-        <div class="card-content">
-            <h2>Succesmetads</h2>
-            <p>Online geld verdienen</p>
-        </div>
-    </div>
-
-    <!-- MARKTPLAATS -->
-    <div class="card" onclick="showPage('marktplaats')">
-        <img src="https://www.upstreamads.com/assets/logo/marktplaats.png"
-        <div class="card-content">
-            <h2>Marktplaats Profiel</h2>
-            <p>Mijn account bekijken</p>
-        </div>
-    </div>
-
-</div>
+<div class="card" onclick="showPage('mooihorloge')">
+<img src="https://image.thum.io/get/width/800/https://mooihorloge.nl">
+<div class="card-content"><h2>Mooihorloge</h2></div>
 </div>
 
-<!-- MOOIHORLOGE PAGE -->
+<div class="card" onclick="showPage('succesmetads')">
+<img src="https://image.thum.io/get/width/800/https://succesmetads.nl">
+<div class="card-content"><h2>Succesmetads</h2></div>
+</div>
+
+<div class="card" onclick="showPage('marktplaats')">
+<img src="https://www.upstreamads.com/assets/logo/marktplaats.png" style="background:white; padding:20px; object-fit:contain;">
+<div class="card-content"><h2>Marktplaats</h2></div>
+</div>
+
+</div>
+
+<!-- OVERIGE -->
+<div class="section-title">Overige Webshops</div>
+<div class="divider"></div>
+
+<div class="container">
+
+<div class="card" onclick="showPage('ali')">
+<img src="https://image.thum.io/get/width/800/https://aliexpress.com">
+<div class="card-content"><h2>AliExpress</h2></div>
+</div>
+
+<div class="card" onclick="showPage('bol')">
+<img src="https://image.thum.io/get/width/800/https://bol.com">
+<div class="card-content"><h2>Bol.com</h2></div>
+</div>
+
+<div class="card" onclick="showPage('goohoo')">
+<img src="https://image.thum.io/get/width/800/https://temu.com">
+<div class="card-content"><h2>Goohoo</h2></div>
+</div>
+
+</div>
+
+</div>
+
+<!-- PAGINA'S -->
 <div id="mooihorloge" class="page">
-
 <span class="back" onclick="showPage('home')">← Terug</span>
-
 <h1>Mooihorloge</h1>
-<img src="https://image.thum.io/get/width/1000/https://mooihorloge.nl" width="100%">
-
-<p>Mooihorloge.nl is een toonaangevende horlogespecialist met zowel een uitgebreide online webshop als een fysieke winkel aan de Vetkamp 2C in Nijkerk. Het bedrijf staat bekend om zijn uitzonderlijk brede assortiment, deskundige service en klantgerichte benadering. Met meer dan 6.000 horloges online en een fysieke collectie van ruim 1.500 modellen van meer dan 25 merken, is Mooihorloge.nl uitgegroeid tot een van de grootste horlogewinkels van Midden‑Nederland. 
-
-Klanten kunnen er terecht voor een zorgvuldig samengestelde selectie van zowel klassieke als moderne horloges, variërend van Zwitserse precisie tot sportieve en modieuze modellen. Merken zoals Seiko, Tissot, Casio, Festina, Hamilton, Hugo Boss, Danish Design en vele anderen zijn ruim vertegenwoordigd. Daarnaast biedt de winkel een breed assortiment sieraden en accessoires, waardoor klanten hun stijl volledig kunnen afstemmen op hun persoonlijke voorkeur. 
-
-De fysieke winkel in Nijkerk staat bekend om zijn gastvrije sfeer, vakbekwaam personeel en persoonlijke service. Bezoekers waarderen de deskundigheid van het team, de ruime keuze en de snelle levering bij online bestellingen. Mooihorloge.nl heeft sinds 2007 een sterke reputatie opgebouwd en telt inmiddels tienduizenden tevreden klanten. </p>
-
-<h2>Wat verkopen ze?</h2>
-<ul>
-<li>Luxe horloges</li>
-<li>Sport modellen</li>
-<li>Casual designs</li>
-</ul>
-
 <a class="btn" href="https://mooihorloge.nl" target="_blank">Ga naar website</a>
-
 </div>
 
-<!-- SUCCESMETADS -->
 <div id="succesmetads" class="page">
-
 <span class="back" onclick="showPage('home')">← Terug</span>
-
 <h1>Succesmetads</h1>
-<img src="https://image.thum.io/get/width/1000/https://succesmetads.nl" width="100%">
-
-<p>SuccesMetAds is een platform dat ondernemers helpt om online zichtbaar te worden en hun advertenties écht te laten werken. Het draait om slimme strategieën, duidelijke inzichten en praktische begeleiding, zodat je niet alleen meer bereik krijgt, maar ook meer resultaat. Of je nu net begint met adverteren of je campagnes wilt opschalen, SuccesMetAds geeft je de tools en kennis om met vertrouwen te groeien.</p>
-
-<h2>Wat leer je?</h2>
-<ul>
-<li>Advertenties maken</li>
-<li>Marketing strategie</li>
-<li>Online business</li>
-</ul>
-
 <a class="btn" href="https://succesmetads.nl" target="_blank">Ga naar website</a>
-
 </div>
 
-<!-- MARKTPLAATS -->
 <div id="marktplaats" class="page">
-
 <span class="back" onclick="showPage('home')">← Terug</span>
+<h1>Marktplaats</h1>
+<a class="btn" href="https://www.marktplaats.nl/u/bas/12777793/" target="_blank">Bekijk profiel</a>
+</div>
 
-<h1>Marktplaats Profiel</h1>
+<div id="ali" class="page">
+<span class="back" onclick="showPage('home')">← Terug</span>
+<h1>AliExpress</h1>
+<a class="btn" href="https://aliexpress.com" target="_blank">Ga naar website</a>
+</div>
 
-<img src="https://image.thum.io/get/width/1000/https://www.marktplaats.nl" width="100%">
+<div id="bol" class="page">
+<span class="back" onclick="showPage('home')">← Terug</span>
+<h1>Bol.com</h1>
+<a class="btn" href="https://bol.com" target="_blank">Ga naar website</a>
+</div>
 
-<p>Mijn Marktplaats profiel</p>
-
-<h2>Over dit account</h2>
-<ul>
-<li>Advertenties plaatsen</li>
-<li>Verkopen en kopen</li>
-<li>Actief handelen</li>
-</ul>
-
-<a class="btn" href="https://www.marktplaats.nl/u/bas/12777793/" target="_blank">
-Bekijk profiel
-</a>
-
+<div id="goohoo" class="page">
+<span class="back" onclick="showPage('home')">← Terug</span>
+<h1>Goohoo</h1>
+<a class="btn" href="https://temu.com" target="_blank">Ga naar website</a>
 </div>
 
 </body>
